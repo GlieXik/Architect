@@ -1,0 +1,13 @@
+header {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  opacity: 0.7;
+  position: absolute;
+  z-index: -1;
+  span {
+    display: block;
+    font-size: calc((1vw + 1vh) * 0.6);
+    margin-top: 1em;
+  }
+}
