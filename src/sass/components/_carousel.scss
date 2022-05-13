@@ -4,13 +4,22 @@
   width: 50vw;
   transform: scale(4);
   will-change: transform;
-  transition: transform 1s cubic-bezier(0.075, 1, 0.25, 1);
+  transition: transform 1s cubic-bezier(0.075, 1, 0.25, 1), opacity 1s;
 }
 .gallere__item {
   margin-bottom: 10px;
   transform: scale(1.01);
   will-change: transform;
+  display: block;
   img {
     width: 100%;
+  }
+}
+.loaded {
+  .gallery {
+    opacity: 1;
+  }
+  header span {
+    opacity: 0;
   }
 }

@@ -503,10 +503,10 @@ body {
   -webkit-transform: scale(4);
           transform: scale(4);
   will-change: transform;
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0.075, 1, 0.25, 1);
-  transition: -webkit-transform 1s cubic-bezier(0.075, 1, 0.25, 1);
-  transition: transform 1s cubic-bezier(0.075, 1, 0.25, 1);
-  transition: transform 1s cubic-bezier(0.075, 1, 0.25, 1), -webkit-transform 1s cubic-bezier(0.075, 1, 0.25, 1);
+  -webkit-transition: opacity 1s, -webkit-transform 1s cubic-bezier(0.075, 1, 0.25, 1);
+  transition: opacity 1s, -webkit-transform 1s cubic-bezier(0.075, 1, 0.25, 1);
+  transition: transform 1s cubic-bezier(0.075, 1, 0.25, 1), opacity 1s;
+  transition: transform 1s cubic-bezier(0.075, 1, 0.25, 1), opacity 1s, -webkit-transform 1s cubic-bezier(0.075, 1, 0.25, 1);
 }
 
 .gallere__item {
@@ -514,10 +514,19 @@ body {
   -webkit-transform: scale(1.01);
           transform: scale(1.01);
   will-change: transform;
+  display: block;
 }
 
 .gallere__item img {
   width: 100%;
+}
+
+.loaded .gallery {
+  opacity: 1;
+}
+
+.loaded header span {
+  opacity: 0;
 }
 
 header {
@@ -533,5 +542,16 @@ header span {
   display: block;
   font-size: calc((1vw + 1vh) * 0.6);
   margin-top: 1em;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000;
+  }
+  header,
+  span {
+    -webkit-filter: invert(100%);
+            filter: invert(100%);
+  }
 }
 /*# sourceMappingURL=main.css.map */
